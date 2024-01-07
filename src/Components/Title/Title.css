@@ -1,0 +1,11 @@
+
+
+.underline {
+    height: 3px;
+    width: 50px;
+    transition: width 400ms;
+}
+
+h1:hover + .underline {
+    width: 100px !important;
+}

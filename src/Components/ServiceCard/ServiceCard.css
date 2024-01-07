@@ -1,0 +1,8 @@
+
+.c2 {
+    z-index: -1;
+}
+
+.ease {
+    transition: all 2s ease-in;
+}

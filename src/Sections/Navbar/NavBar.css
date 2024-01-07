@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+:root{
+    --primary-color: rgb(26 86 219 / 0.9);
+    --overlay-color: rgb(26 86 219 / 01);
+    --menu-speed: 0.75s;
+}
+
+.btnn{
+    display: inline-block;
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    transition: opacity 1s ease-in;
+    border-radius: 2rem;
+}
+.btnn:hover{
+    opacity: 0.7;
+}
+.contact-links{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    max-width: 980px;
+    flex-wrap: wrap;
+    margin-left: 54.5rem; 
+    margin-top: -12rem;
+}
+.contact-details{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-out; 
+  }
+  .contact-details:hover{
+    transform: translateY(5px);
+  }
+  .btn{
+    display: inline-block;
+    padding-right: 1rem;
+    text-decoration: none;
+    color: #fff;
+  }
+.menu-wrap{
+    position: fixed;
+    z-index: 20;
+    right: 15%;
+}
+.menu-wrap .toggler{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+}
+.menu-wrap .hamburger{
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    border-radius: 15px;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 0.5rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Hamburger line */
+.menu-wrap .hamburger >div {
+    position: relative;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+/* Top and bottom lines */
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 30px;
+    height: 2px;
+    background: inherit;
+}
+
+@media (max-width: 768px) {
+    .menu-wrap .hamburger{
+        width: 40px;
+        height: 40px;
+    }
+    .menu-wrap .hamburger >div {
+        width: 30px;
+        height: 2px;
+    }
+    .menu-wrap .hamburger > div:before,
+    .menu-wrap .hamburger > div:after{
+        width: 10px;
+    }    
+}
+
+/* Moves line down */
+.menu-wrap .hamburger > div:after{
+    top: 10px;
+}
+/* Toggler animate */
+.menu-wrap .toggler:checked + .hamburger > div{
+    transform: rotate(135deg);
+}
+/* Turn Lines into X */
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after{
+    top: 0;
+    transform: rotate(90deg);
+}
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+}
+/* Show menu */
+.menu-wrap .toggler:checked ~ .menu{
+    visibility: visible;
+}
+.menu-wrap .toggler:checked ~ .menu > div{
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+.menu-wrap .toggler:checked ~ .menu > div > div{
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     visibility: hidden; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-wrap .menu > div{
+    background-color: var(--overlay-color);
+    border-radius: 0%;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0); 
+    transition: all 0.4s ease;
+    margin: 0;
+}
+.menu-wrap .menu > div >div{
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+     opacity: 0; 
+    transition: opacity 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu >div > div > ul > li > a{
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+/* .navigation__checkbox {
+    display: none;
+}
+
+.navigation__button {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 300;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+@media screen  and (min-width: 768px) {
+    .navigation__button {
+        top: 4rem;
+        right: 4rem;
+        height: 7rem;
+        width: 7rem;
+    }
+} */
+
+
+/* 
+.navigation__background {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background: #4A676A;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    transition: all 800ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@media screen and (min-width: 768px) {
+    .navigation__background {
+        top: 4.5rem;
+        right: 4.5rem;
+        height: 6rem;
+        width: 6rem;
+    }
+}
+
+.navigation__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    opacity: 0;
+    width: 0;
+    visibility: hidden;
+    z-index: 200;
+    transition: all 800ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation__item {
+    margin: 1rem;
+}
+
+.navigation__link:link,
+.navigation__link:visited {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    color: #f4f4f4;
+    font-size: 2.4rem;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+@media(min-width: 768px) {
+    .navigation__link:link,
+    .navigation__link:visited {
+        font-size: 3.8rem;
+    }
+}
+
+.navigation__link span {
+    margin-right: 1.5rem;
+    display: inline-block;
+}
+
+.navigation__link:hover {
+    color: #C1D0D0;
+    transform: scale(1.1);
+}
+
+.navigation__checkbox:checked~.navigation__background {
+    transform: scale(80)
+}
+
+.navigation__checkbox:checked~.navigation__nav {
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation__icon {
+
+    position: relative;
+    margin-top: 2.5rem;
+} */
+
+
+
+/* 
+@media screen and (min-width: 768px) {
+    .navigation__icon {
+        margin-top: 3.5rem;
+    }
+}
+
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+    display: inline-block;
+    width: 2.2rem;
+    height: 2px;
+    background-color: #4A676A;
+}
+
+@media (min-width: 768px) {
+    .navigation__icon,
+    .navigation__icon::before,
+    .navigation__icon::after {
+        width: 3rem;
+    }
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    transition: all 200ms;
+}
+
+.navigation__icon::before {
+    top: -.8rem;
+}
+
+.navigation__icon::after {
+    top: .8rem;
+}
+
+.navigation__button:hover .navigation__icon::before {
+    top: -1rem;
+}
+
+.navigation__button:hover .navigation__icon::after {
+    top: 1rem;
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon {
+    background-color: transparent;
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+
+
+#by {
+  font-family: 'Arima Madurai', cursive;
+  color: #4A676A;
+  font-size: 10px;
+  position: absolute;
+  top: 22%;
+  right: 2.5%; 
+} */

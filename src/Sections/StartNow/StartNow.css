@@ -1,0 +1,6 @@
+.startnow {
+    background: linear-gradient(0deg, rgba(88, 101, 132, 0.5), rgba(26 86 219 / 50%)), url(../../assets/startnowbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

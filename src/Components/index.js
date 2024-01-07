@@ -1,0 +1,11 @@
+export { default as NavLink } from './NavLink/NavLink';
+export { default as Title } from './Title/Title';
+export { default as ServiceCard } from './ServiceCard/ServiceCard';
+export { default as HeroSection } from './HeroSection/HeroSection'
+export { default as LoadingScreen } from './LoadingScreen/LoadingScreen'
+export { default as Value } from './Value/Value'
+export { default as ValueSlider } from './ValuesSlider/ValueSlider'
+export { default as Process } from './Process/Process'
+export { default as Technology } from './Technology/Technology'
+export { default as AboutItem } from './AboutItem/AboutItem'
+export { default as Product } from './Product/Product'

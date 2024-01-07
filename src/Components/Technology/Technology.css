@@ -1,0 +1,17 @@
+/* For small screens, set the font size to 30px */
+@media (max-width: 767px) {
+    .custom-icon {
+      font-size: 30px;
+    }
+  }
+  
+  /* For large screens, set the font size to 50px */
+  @media (min-width: 768px) {
+    .custom-icon {
+      font-size: 50px;
+    }
+  }
+  
+  .animate-spin {
+    animation: spin 4s linear infinite;
+}
