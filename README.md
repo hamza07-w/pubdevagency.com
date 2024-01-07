@@ -29,4 +29,4 @@ npm run start
 This will start the development server, and you can view the app by navigating to http://localhost:3000 in your web browser.
 
 ## License
-This project is licensed under the MIT License - see the [License](https://github.com/hamza07-w/pubdevagency.com/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [License](https://github.com/hamza07-w/pubdevagency.com/blob/main/LICENCE) file for details.
